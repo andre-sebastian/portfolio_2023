@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
-import { gql } from '@apollo/client';
-import graphqlClient from '../utils/graphqlClient';
 import { useRouter } from 'next/router';
 import Drawer from '../components/Drawer';
 import Footer from '../components/Footer';
 
-const Blog: NextPage = ({ posts }: any) => {
+const Blog: NextPage = () => {
 	const router = useRouter();
 
 	return (
@@ -35,33 +33,3 @@ const Blog: NextPage = ({ posts }: any) => {
 };
 
 export default Blog;
-export async function getServerSideProps() {
-	const { data } = await graphqlClient.query({
-		query: gql`
-			{
-				posts {
-					data {
-						id
-						attributes {
-							Title
-							Cover {
-								data {
-									id
-									attributes {
-										name
-										formats
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		`,
-	});
-	return {
-		props: {
-			posts: data.posts,
-		},
-	};
-}

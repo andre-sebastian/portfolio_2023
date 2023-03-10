@@ -29,13 +29,13 @@ const About: NextPage = () => {
 	const renderCloudIcon = (type: string) => {
 		switch (type) {
 			case 'backend':
-				return <IconCloud children={bIcons} />;
+				return <IconCloud>{bIcons}</IconCloud>;
 			case 'frontend':
-				return <IconCloud children={fIcons} />;
+				return <IconCloud>{fIcons}</IconCloud>;
 			case 'others':
-				return <IconCloud children={oIcons} />;
+				return <IconCloud>{oIcons}</IconCloud>;
 			default:
-				return <IconCloud children={bIcons} />;
+				return <IconCloud>{bIcons}</IconCloud>;
 		}
 	};
 	const renderButtonsSkills = (type: string) => {
