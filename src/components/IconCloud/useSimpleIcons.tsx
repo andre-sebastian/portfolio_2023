@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { renderSimpleIcon, fetchSimpleIcons } from 'react-icon-cloud';
+import { renderSimpleIcon } from 'react-icon-cloud';
 import { simpleIcons } from './allIconsCloud';
 
 const useIcons = (slugs: string[]): any => {
 	const [icons, setIcons] = useState<any>();
 	useEffect(() => {
 		setIcons(simpleIcons.filter(({ slug }: any) => slugs.includes(slug)));
-	}, []);
+	}, [slugs]);
 
 	if (icons) {
 		return icons.map((icon: any) =>
