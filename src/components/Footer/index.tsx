@@ -1,36 +1,40 @@
-import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF';
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
-import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
-import userInfo from '../../data/userInfoData';
+import Image from 'next/image';
+import SocialLinks from '@/components/SocialLinks';
+import userInfo from '@/data/userInfoData';
+import { FULL_NAME, PROFILE_IMAGE } from '@/util/site';
 
-const Footer = () => (
-	<footer className='footer items-center bg-base-200 p-4 text-neutral-content'>
-		<div className='grid-flow-col items-center text-center lg:text-left'>
-			<p>Copyright © {String(new Date().getFullYear())} - Todos los derechos reservados</p>
-		</div>
-		<div className='grid-flow-col gap-1 md:place-self-center md:justify-self-end'>
-			{/* <button
-				onClick={() => window.open(userInfo.social.facebook, '_blank')}
-				className=' btn btn-secondary'>
-				<FaFacebookF size={20} className='text-[#1877F2]' />
-			</button> */}
-			<button
-				onClick={() => window.open(userInfo.social.github, '_blank')}
-				className='btn btn-secondary '>
-				<FaGithub size={20} className='text-white' />
-			</button>
-			<button
-				onClick={() => window.open(userInfo.social.linkedin, '_blank')}
-				className='btn btn-secondary '>
-				<FaLinkedinIn size={20} className='text-[#0A66C2]' />
-			</button>
-			<button
-				onClick={() => window.open(userInfo.social.twitter, '_blank')}
-				className='btn btn-secondary '>
-				<FaTwitter size={20} className='text-[#1DA1F2]' />
-			</button>
-		</div>
-	</footer>
-);
+async function Footer() {
+	'use cache';
+
+	return (
+		<footer className='footer bg-neutral text-neutral-content sm:footer-horizontal p-6 md:p-10'>
+			<aside>
+				<Image
+					src={PROFILE_IMAGE}
+					alt=''
+					width={50}
+					height={50}
+					className='h-[50px] w-[50px] rounded-full object-cover'
+				/>
+				<p>
+					{FULL_NAME}
+					<br />
+					{userInfo.profession.trim()}
+				</p>
+				<p>
+					Copyright © {new Date().getFullYear()} - Todos los derechos
+					reservados
+				</p>
+			</aside>
+			<nav aria-label='Redes sociales'>
+				<h6 className='mb-2 font-semibold uppercase'>Social</h6>
+				<SocialLinks
+					variant='icons'
+					wrapperClassName='grid grid-flow-col gap-4'
+				/>
+			</nav>
+		</footer>
+	);
+}
+
 export default Footer;

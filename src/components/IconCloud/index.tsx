@@ -1,10 +1,11 @@
 import { Cloud } from 'react-icon-cloud';
+import getIcons from './getSimpleIcons';
 
 interface IconCloudProps {
-	children: any;
+	slugs: string[];
 }
 
-const IconCloud = ({ children }: IconCloudProps) => {
+const IconCloud = ({ slugs }: IconCloudProps) => {
 	return (
 		<Cloud
 			options={{
@@ -32,7 +33,7 @@ const IconCloud = ({ children }: IconCloudProps) => {
 					width: '100%',
 				},
 			}}>
-			{children}
+			{getIcons(slugs)}
 		</Cloud>
 	);
 };

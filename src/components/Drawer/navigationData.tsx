@@ -1,13 +1,13 @@
 import { IoPerson } from '@react-icons/all-files/io5/IoPerson';
 import { IoHome } from '@react-icons/all-files/io5/IoHome';
-import { IoDocumentText } from '@react-icons/all-files/io5/IoDocumentText';
 import { IoSchool } from '@react-icons/all-files/io5/IoSchool';
-import { IoNewspaper } from '@react-icons/all-files/io5/IoNewspaper';
 import { IoCall } from '@react-icons/all-files/io5/IoCall';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
+
+type NavId = 'home' | 'about' | 'resume' | 'contact';
 
 interface NavbarDrawerContentType {
-	id: string;
+	id: NavId;
 	icon: ReactElement;
 	title: string;
 	url: string;
@@ -15,41 +15,30 @@ interface NavbarDrawerContentType {
 
 const navbarDrawerContent: Array<NavbarDrawerContentType> = [
 	{
-		id: "home",
-		icon: <IoHome size={15} />,
+		id: 'home',
+		icon: <IoHome size={15} aria-hidden='true' />,
 		title: 'Inicio',
 		url: '/',
 	},
 	{
-		id: "about",
-		icon: <IoPerson size={15} />,
+		id: 'about',
+		icon: <IoPerson size={15} aria-hidden='true' />,
 		title: 'Acerca de mí',
 		url: '/about',
 	},
 	{
-		id: "resume",
-		icon: <IoSchool size={15} />,
+		id: 'resume',
+		icon: <IoSchool size={15} aria-hidden='true' />,
 		title: 'Trayectoria',
 		url: '/resume',
 	},
-	// {
-	// 	id: "portfolio",
-	// 	icon: <IoDocumentText size={15} />,
-	// 	title: 'Portafolio',
-	// 	url: '/portfolio',
-	// },
-	// {
-	// 	id: "blog",
-	// 	icon: <IoNewspaper size={15} />,
-	// 	title: 'Blog',
-	// 	url: '/blog',
-	// },
 	{
-		id: "contact",
-		icon: <IoCall size={15} />,
+		id: 'contact',
+		icon: <IoCall size={15} aria-hidden='true' />,
 		title: 'Contactar',
 		url: '/contact',
 	},
 ];
 
+export type { NavId, NavbarDrawerContentType };
 export default navbarDrawerContent;

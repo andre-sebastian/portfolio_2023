@@ -12,7 +12,9 @@ const Card = ({ category, content, date, title }: CardProps) => (
 		</div>
 		<div className='col-span-12 space-y-2'>
 			<span className='badge indicator-item badge-primary gap-2 py-3'>
-				<span className='h-1.5 w-1.5 animate-ping rounded-full bg-white'></span>
+				<span
+					aria-hidden='true'
+					className='h-1.5 w-1.5 animate-ping rounded-full bg-white'></span>
 				{category}
 			</span>
 			<h2 className='text-xl text-white'>{title}</h2>
