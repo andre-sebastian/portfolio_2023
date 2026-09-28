@@ -1,8 +1,9 @@
 const userInfo = {
 	name: 'Andre Sebastian',
 	lastname: 'Reinoso Aranda',
-	profession: 'Desarrollador Full Stack Web · Móvil ',
-	bio: 'Soy una persona enfocada en mis objetivos trazados, considerándome resiliente en los proyectos y trabajos que participo. El desarrollo de software y dirección de proyectos son la rama en la que mejor me desenvuelvo por motivo de mi aptitud de liderazgo, honestidad y compromiso.',
+	profession: 'Desarrollador Full Stack',
+	bio: 'Desarrollador de Software con experiencia como Full Stack y actualmente enfocado en Frontend Mobile con React Native. Combino competencias analíticas y de liderazgo para traducir requerimientos en aplicaciones móviles de alto rendimiento. Mi trayectoria abarca desde el sector financiero, destacando en el diseño de arquitecturas modulares, integración de APIs estables y optimización de aplicaciones corporativas desde el análisis hasta el despliegue final.',
+	email: 'andresebastianreinoso@gmail.com',
 	social: {
 		facebook: 'https://www.facebook.com/andresebastianreinosoaranda',
 		github: 'https://github.com/andre-sebastian',
