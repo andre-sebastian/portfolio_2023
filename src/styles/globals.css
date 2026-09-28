@@ -1,6 +1,86 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "daisyui" {
+	themes: false;
+	logs: false;
+}
+
+@plugin "daisyui/theme" {
+	name: "forest";
+	default: true;
+	color-scheme: dark;
+
+	--color-primary: #22533e;
+	--color-primary-content: #fff;
+	--color-secondary: #27272a;
+	--color-secondary-content: #fff;
+	--color-accent: #fff;
+	--color-accent-content: #000;
+	--color-neutral: #212425;
+	--color-neutral-content: #99a6a6;
+	--color-base-100: #18181b;
+	--color-base-200: #27272a;
+	--color-base-300: #3f3f46;
+
+	--radius-selector: 1.9rem;
+	--radius-field: 0.5rem;
+	--radius-box: 0.75rem;
+
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+
+	--tab-border: 1px;
+	--tab-radius: 0.5rem;
+}
+
+@theme inline {
+	--font-sans: var(--font-poppins);
+	--font-serif: var(--font-roboto-slab);
+}
+
+@theme {
+	--color-linkedin: #0a66c2;
+	--color-twitter: #1da1f2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+@layer components {
+	.btn {
+		text-transform: uppercase;
+	}
+}
+
+.skip-link {
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	z-index: 100;
+	transform: translateY(-200%);
+	border-radius: var(--radius-box);
+	background-color: var(--color-primary);
+	padding: 0.75rem 1rem;
+	color: var(--color-primary-content);
+	font-weight: 600;
+	transition: transform 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
 
 .bg-image {
 	background-size:cover;
